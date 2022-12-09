@@ -79,8 +79,8 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  return (a + b + c) / 2 > Math.max(a, b, c);
 }
 
 /**
@@ -115,8 +115,21 @@ function isTriangle(/* a, b, c */) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap(/* rect1, rect2 */) {
-  throw new Error('Not implemented');
+function doRectanglesOverlap(rect1, rect2) {
+  let result = true;
+  if (
+    rect1.top + rect1.height < rect2.top
+    || rect2.top + rect2.height < rect1.top
+  ) {
+    result = false;
+  }
+  if (
+    rect1.left + rect1.width < rect2.left
+    || rect2.left + rect2.width < rect1.left
+  ) {
+    result = false;
+  }
+  return result;
 }
 
 /**
