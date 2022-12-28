@@ -124,14 +124,14 @@ function isTriangle(a, b, c) {
 function doRectanglesOverlap(rect1, rect2) {
   let result = true;
   if (
-    rect1.top + rect1.height < rect2.top ||
-    rect2.top + rect2.height < rect1.top
+    rect1.top + rect1.height < rect2.top
+    || rect2.top + rect2.height < rect1.top
   ) {
     result = false;
   }
   if (
-    rect1.left + rect1.width < rect2.left ||
-    rect2.left + rect2.width < rect1.left
+    rect1.left + rect1.width < rect2.left
+    || rect2.left + rect2.width < rect1.left
   ) {
     result = false;
   }
@@ -278,8 +278,8 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(ccn) {
-  return `${ccn}`.length == 16 ? true : false;
+function isCreditCardNumber(/* ccn */) {
+  throw new Error('Not implemented');
 }
 
 /**
